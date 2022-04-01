@@ -68,4 +68,21 @@ public class Movie {
     void setDateReturned(LocalDate returnDate){
         dateReturned = returnDate; //method requires a date as a parameter, which will be set as return date
     }
+
+    LocalDate getDateDue(){ //returns due date
+        return dateDue;
+    }
+
+    void setDateDue(){
+        if(ranking>10){ //if higher ranked movie
+            dateDue = dateRented.plusDays(3); //3 days from rental date
+        }
+        else if(ranking>1 && ranking<10){ //if middle ranked movie
+            dateDue = dateRented.plusDays(5); //5 days  from rental date
+        }
+        else{ //if lower ranked movie
+            dateDue = dateRented.plusDays(7); //1 week from rental date
+        }
+        
+    }
 }
