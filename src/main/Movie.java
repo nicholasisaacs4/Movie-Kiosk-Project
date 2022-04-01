@@ -17,7 +17,7 @@ public class Movie {
         this.director=director;
     }
 
-    int getIDNum(){
+    int getIDNum(){ //returns ID Number
         return IDNum;
     }
 
@@ -25,7 +25,7 @@ public class Movie {
         //get IDNum of last movie and add 1 to it
     }
 
-    double getPrice(){
+    double getPrice(){ //returns movie price
         return price;
     }
 
@@ -39,5 +39,21 @@ public class Movie {
         else if(ranking<=1){ //if rented 0 or 1 time
             price = 5;
         }
+    }
+
+    int getRanking(){ //returns movie ranking
+        return ranking;
+    }
+
+    void setRanking(){
+        
+    }
+
+    LocalDate getDateRented(){
+        return dateRented;
+    }
+
+    void setDateRented(){
+        dateRented = LocalDate.now(); //when this method is called is the same date that it is rented
     }
 }
