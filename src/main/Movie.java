@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 
 public class Movie {
     String title;
@@ -6,9 +7,9 @@ public class Movie {
     int IDNum;
     double price;
     int ranking;
-    dateTime dateRented;
-    dateTime dateDue;
-    dateTime dateReturned;
+    LocalDate dateRented;
+    LocalDate dateDue;
+    LocalDate dateReturned;
 
     public Movie(String title, String director, String genre){
         this.title=title;
