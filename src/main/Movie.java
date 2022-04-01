@@ -45,15 +45,27 @@ public class Movie {
         return ranking;
     }
 
-    void setRanking(){
-        
+    void setRanking(int newRank){//adds whatever int is passed to ranking
+        ranking+= newRank;
+    }
+
+    void resetRanking(){ //resets the ranking to zero
+        ranking=0;
     }
 
     LocalDate getDateRented(){
         return dateRented;
     }
 
-    void setDateRented(){
-        dateRented = LocalDate.now(); //when this method is called is the same date that it is rented
+    void setDateRented(LocalDate rentDate){
+        dateRented = rentDate; //method requires a date as a parameter, which will be set as rent date
+    }
+
+    LocalDate getDateReturned(){
+        return dateReturned;
+    }
+
+    void setDateReturned(LocalDate returnDate){
+        dateReturned = returnDate; //method requires a date as a parameter, which will be set as return date
     }
 }
