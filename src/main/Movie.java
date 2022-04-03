@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Movie {
+public class Movie{
     public String title;
     public String genre;
     public String director;
