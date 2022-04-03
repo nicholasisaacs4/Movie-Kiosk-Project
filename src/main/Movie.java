@@ -57,7 +57,7 @@ public class Movie {
         return dateRented;
     }
 
-    LocalDate setDateRented(){ //this will be called on the day it's rented
+    void setDateRented(){ //this will be called on the day it's rented
         dateRented = LocalDate.now();
     }
 
@@ -65,7 +65,7 @@ public class Movie {
         return dateDue;
     }
 
-    LocalDate setDateDue(){
+    void setDateDue(){
         if(ranking>10){
             dateDue = dateRented.plusDays(3); //popular movie = less days
         }
@@ -81,7 +81,7 @@ public class Movie {
         return dateReturned;
     }
 
-    LocalDate setDateReturned(){ //this will be called on the day it's returned
+    void setDateReturned(){ //this will be called on the day it's returned
         dateReturned = LocalDate.now();
     }
 
