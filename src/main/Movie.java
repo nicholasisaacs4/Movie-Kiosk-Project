@@ -1,15 +1,15 @@
 import java.time.LocalDate;
 
 public class Movie {
-    String title;
-    String genre;
-    String director;
-    int IDNum;
-    double price;
-    int ranking;
-    LocalDate dateRented;
-    LocalDate dateDue;
-    LocalDate dateReturned;
+    public String title;
+    public String genre;
+    public String director;
+    public int IDNum;
+    public double price;
+    public int ranking;
+    public LocalDate dateRented;
+    public LocalDate dateDue;
+    public LocalDate dateReturned;
 
     public Movie(String title, String director, String genre){
         this.title=title;
@@ -39,6 +39,56 @@ public class Movie {
         else if(ranking<=1){ //if rented 0 or 1 time
             price = 5;
         }
+    }
+
+    int getRanking(){
+        return ranking;
+    }
+
+    void setRanking(){ //when this is called, ranking should increase by 1
+        ranking++;
+    }
+
+    void resetRanking(){ //resets ranking to zero
+        ranking=0;
+    }
+
+    LocalDate getDateRented(){
+        return dateRented;
+    }
+
+    LocalDate setDateRented(){ //this will be called on the day it's rented
+        dateRented = LocalDate.now();
+    }
+
+    LocalDate getDateDue(){
+        return dateDue;
+    }
+
+    LocalDate setDateDue(){
+        if(ranking>10){
+            dateDue = dateRented.plusDays(3); //popular movie = less days
+        }
+        else if(ranking <10 && ranking>2){
+            dateDue = dateRented.plusDays(4);
+        }
+        else{
+            dateDue = dateRented.plusDays(7); //unpopular movie = more days
+        }
+    }
+
+    LocalDate getDateReturned(){
+        return dateReturned;
+    }
+
+    LocalDate setDateReturned(){ //this will be called on the day it's returned
+        dateReturned = LocalDate.now();
+    }
+
+    void resetDates(){ //called after movie is returned
+        dateDue = null;
+        dateRented = null;
+        dateReturned = null;
     }
     
 }
