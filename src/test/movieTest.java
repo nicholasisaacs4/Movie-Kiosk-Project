@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
 
 public class movieTest {
+
     @Test
     void IDTest(){
         Movie movie = new Movie("The Fly", "David Cronenberg", "Horror");
