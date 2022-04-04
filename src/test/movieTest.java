@@ -35,7 +35,16 @@ public class movieTest {
         assertEquals(movie.getPrice(), 10);
         movie.setRanking();
         assertEquals(movie.getPrice(), 20);
-        
-
     }
+
+    @Test
+    void dateTest(){
+        Movie movie = new Movie("Star Wars", "George Lucas", "Sci-fi");
+        movie.setDateRented();
+        assertEquals(movie.getDateRented(), LocalDate.now());
+        Movie movie2 = new Movie("Alien", "Ridley Scott", "Horror");
+        movie2.setDateRented();
+        assertEquals(movie2.getDateRented(), LocalDate.now());
+    }
+    
 }
