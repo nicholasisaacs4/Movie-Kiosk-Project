@@ -38,7 +38,7 @@ public class movieTest {
     }
 
     @Test
-    void dateTest(){
+    void dateRentedTest(){
         Movie movie = new Movie("Star Wars", "George Lucas", "Sci-fi");
         movie.setDateRented();
         assertEquals(movie.getDateRented(), LocalDate.now());
@@ -46,5 +46,10 @@ public class movieTest {
         movie2.setDateRented();
         assertEquals(movie2.getDateRented(), LocalDate.now());
     }
-    
+
+    @Test
+    void dateDueTest(){
+        LocalDate dateRented = 
+
+    }
 }
