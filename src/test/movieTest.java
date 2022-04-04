@@ -49,7 +49,21 @@ public class movieTest {
 
     @Test
     void dateDueTest(){
-        LocalDate dateRented = 
+        LocalDate dateRented = LocalDate.now();
+        Movie movie = new Movie("Beetlejuice", "Tim Burton", "Comedy");
+        movie.setRanking(); //1
+        movie.setRanking(); //2
+        movie.setDateDue();
+        assertEquals(movie.getDateDue, dateRented.plusDays(7));
 
+        movie.setRanking();//3
+        movie.setDateDue();
+        assertEquals(movie.getDateDue, dateRented.plusDays(4));
+        
+        for(int i = 0; i<10; i++){//>10
+            movie.setRanking();
+        }
+        movie.setDateDue();
+        assertEquals(movie.getDateDue, dateRented.plusDays(3));
     }
 }
