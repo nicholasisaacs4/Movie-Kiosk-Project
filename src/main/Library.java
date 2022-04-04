@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Library {
-    ArrayList<Movie>getMovies;
+    ArrayList<Movie>allMovies;
     ArrayList<Movie>topTen;
 
     public Library(){
@@ -10,7 +10,7 @@ public class Library {
     
 
 ArrayList getMovieList(){
-    return getMovies;
+    return allMovies;
 }
 
 ArrayList getTopTen(){
