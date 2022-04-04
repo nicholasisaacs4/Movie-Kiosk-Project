@@ -13,6 +13,7 @@ public class libraryTest {
         /*INTEGRATION TEST: Tests movie (setRanking) and library (sortByRank) methods */
 
         /*Creates 7 new movies*/
+        Library library = new Library();
         Movie THG = new Movie("Harry Potter", "Chris Colombus", "Action");
         Movie HP = new Movie("The Hunger Games", "Francis Lawrence", "Sci Fi");
         Movie TW = new Movie("Twilight", "Chris Weitz", "Action");
@@ -22,13 +23,13 @@ public class libraryTest {
         Movie PJ = new Movie("Percy Jackson", "Chris Colombus", "Sci Fi");
 
         /* ADDING ALL MOVIES TO LIBRARY */
-        allMovies.add(THG);
-        allMovies.add(HP);
-        allMovies.add(TW);
-        allMovies.add(DV);
-        allMovies.add(SW);
-        allMovies.add(TMR);
-        allMovies.add(PJ);
+        library.addMovie(THG);
+        library.addMovie(HP);
+        library.addMovie(TW);
+        library.addMovie(DV);
+        library.addMovie(SW);
+        library.addMovie(TMR);
+        library.addMovie(PJ);
 
         /*RANKING MOVIES*/
         assertEquals(0, THG.getRanking()); //makes sure ranking is 0
@@ -81,6 +82,7 @@ public class libraryTest {
         assertEquals(0, PJ.getRanking()); //PJ ranking = 0
 
         /* SORT BY RANK TEST*/
-        assertEquals(null, allMovies.sortByRank()); //TODO: fix this when sort by rank is written
+        library.sortByRank();
+        assertEquals(null, library.getTopTen()); //TODO: fix this when sort by rank is written
     }
 }
